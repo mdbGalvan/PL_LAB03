@@ -1,0 +1,246 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Práctica 3: Ficheros INI</title>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="shortcut icon" href="images/logo.png">
+	<!-- CSS -->
+	<link href="css/nuevo.css" rel="stylesheet" type="text/css" />
+	<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+	<!-- JAVASCRIPT -->
+	<script type="text/javascript" src="js/autocomplete.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+</head>
+<body> 
+
+	<header>
+		<div id="cabecera">
+			Práctica 3: Ficheros INI <span style="font-size:19px;color:gray"> Asignatura:</span> Procesadores de Lenguajes<br>
+			<span style="font-size:22px; color:#553529">Profesor: Casiano Rodríguez León</span>
+		</div>
+		<div id="negro">
+			<div id="volver">
+				<a href="http://mdbgalvan.github.io/">alu3299</a>
+			</div>	
+		</div>
+	</header>
+	
+	<div id="indice">
+		<div id="titulo_indice"><img src="images/indice_cortado.png"></div>
+		<dd>
+				<li><a href="#punto2">Resolución de la práctica</a></li>
+		</dd>
+	</div>
+
+	<hr>
+	
+	<section>
+
+		<!-- PRÁCTICA 3 -->
+		<p id="punto2"></p>
+		
+		<div id="titulillo">
+			<span style="color:#CCC2A0;font-size:28px">• </span>Resolución de la Práctica
+		</div>
+		
+		<p><a href="http://www.html5rocks.com/es/tutorials/file/dndfiles/">Mirar</a> y 
+		<a href="http://stackoverflow.com/questions/13556812/using-this-with-filereader-to-target-result">esto</a></p>
+		
+		<p>El código a completar para el <b>HTML</b> (index.html) es: </p>
+	
+<div id="codigo">
+<pre>
+&lthtml>
+  &lthead>
+     &ltmeta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+     &lttitle>INI files&lt/title>
+     &ltlink href="global.css" rel="stylesheet" type="text/css">
+     &ltscript type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js">&lt/script>
+     &ltscript type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">&lt/script>
+     &ltscript type="text/javascript" src="ini.js">&lt/script>
+  &lt/head>
+  &ltbody>
+    &lth1>INI files&lt/h1>
+    &ltinput type="file" id="<span id="html1">_______</span>" />
+    &ltdiv id="out" class="hidden">
+    &lttable>
+      &lttr>&ltth>Original&lt/th>&ltth>Tokens&lt/th>&lt/tr>
+      &lttr>
+        &lttd>
+          &ltpre class="input" id="<span id="html2">_______</span>">&lt/pre>
+        &lt/td>
+        &lttd>
+          &ltpre class="output" id="<span id="html3">_______</span>">&lt/pre>
+        &lt/td>
+      &lt/tr>
+    &lt/table>
+    &lt/div>
+  &lt/body>
+&lt/html>
+</pre>
+	<br>
+	<input type="Button" value="Completar" onClick="stuff_html()" class="myButton"><label for="name">
+	<input type="Button" value="Limpiar" onClick="erase3()" class="myButton"><label for="name"><br><br>
+</div>
+	
+		<p>El código a completar para el <b>CSS</b> (global.css) es: </p>
+	
+<div id="codigo">
+<pre>
+html *
+{
+   font-size: large; 
+   /* The !important ensures that nothing can override what you've set in this style (unless it is also important). */
+   font-family: Arial;
+}
+
+.thumb {
+    height: 75px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+  }
+
+h1            { text-align: center; font-size: x-large; }
+th, td        { vertical-align: top; text-align: left; }   
+/* #finaltable  * { color: white; background-color: black; }   */
+
+/* #finaltable table { border-collapse:collapse; } */
+/* #finaltable table, td { border:1px solid white; } */
+#finaltable:hover td { background-color: blue; } 
+tr:nth-child(odd)    { background-color:#eee; }
+tr:nth-child(even)    { background-color:#00FF66; }
+input        { text-align: right;  border: none;       }     /* Align input to the right  */
+textarea     { border: outset; border-color: white;       }                        
+table        { border: inset; border-color: white; }
+.hidden      { display: <span id="css1">_______</span>; }
+.unhidden    { display: <span id="css2">_______</span>; }
+table.center { margin-left:auto; margin-right:auto; }
+#result      { border-color: red; }
+tr.error       { background-color: red; }
+pre.output   { background-color: white; }
+span.repeated { background-color: red }
+span.header { <span id="css3">_______</span>: <span id="css4">_______</span> }
+span.comments { <span id="css5">_______</span>: <span id="css6">_______</span> }
+span.blanks { <span id="css7">_______</span>: <span id="css8">_______</span> }
+span.nameEqualValue { <span id="css9">_______</span>: <span id="css10">_______</span> }
+span.error { <span id="css11">_______</span>: <span id="css12">_______</span> }
+
+body
+{
+ background-color:#b0c4de;  /* blue */
+}
+</pre>
+	<br>
+	<input type="Button" value="Completar" onClick="stuff_css()" class="myButton"><label for="name">
+	<input type="Button" value="Limpiar" onClick="erase2()" class="myButton"><label for="name"><br><br>
+</div>
+		
+		<p>El código a completar para el <b>javaScript</b> (ini.js) es: </p>
+		
+<div id="codigo">
+<pre>
+"use <span id="sol0">_______</span>"; // Use ECMAScript 5 strict mode in browsers that support it
+
+$(document).<span id="sol1">_______</span>(function() {
+   $("#fileinput").<span id="sol2">_______</span>(calculate);
+});
+
+function calculate(evt) {
+  var f = evt.target.files[0]; 
+
+  if (f) {
+    var r = new <span id="sol3">_______</span>();
+    r.onload = function(e) { 
+      var contents = e.target.<span id="sol4">_______</span>;
+      
+      var tokens = lexer(contents);
+      var pretty = tokensToString(tokens);
+      
+      out.className = 'unhidden';
+      initialinput.<span id="sol5">_______</span> = contents;
+      finaloutput.<span id="sol6">_______</span> = pretty;
+    }
+    r.<span id="sol7">_______</span>(f); // Leer como texto
+  } else { 
+    alert("Failed to load file");
+  }
+}
+var temp = '&ltli> &ltspan class = "<%= <span id="sol8">_______</span> %>"> <%= _ %> &lt/span>\n';
+
+function tokensToString(tokens) {
+   var r = '';
+   for(var i in tokens) {
+     var t = tokens[i];
+     var s = JSON.stringify(t, undefined, 2);
+     s = _.template(temp, {t: t, s: s});
+     r += s;
+   }
+   return '&ltol>\n'+r+'&lt/ol>';
+}
+
+function lexer(input) {
+  var blanks         = /^<span id="sol9">_______</span>/;
+  var iniheader      = /^<span id="sol10">_______</span>/;
+  var comments       = /^<span id="sol11">_______</span>/;
+  var nameEqualValue = /^<span id="sol12">_______</span>/;
+  var any            = /^<span id="sol13">_______</span>/;
+
+  var out = [];
+  var m = null;
+
+  while (input != '') {
+    if (m = blanks.<span id="sol14">_______</span>(input)) {
+      input = input.substr(m.index+<span id="sol15">_______</span>);
+      out.push({ type : <span id="sol16">_______</span>, match: <span id="sol17">_______</span> });
+    }
+    else if (m = iniheader.exec(input)) {
+      input = input.substr(<span id="sol18">_______</span>);
+      <span id="sol19">_______</span> // avanzemos en input
+    }
+    else if (m = comments.exec(input)) {
+      input = input.substr(<span id="sol20">_______</span>);
+      <span id="sol21">_______</span>
+    }
+    else if (m = nameEqualValue.exec(input)) {
+      input = input.substr(<span id="sol22">_______</span>);
+      <span id="sol23">_______</span>
+    }
+    else if (m = any.exec(input)) {
+      <span id="sol24">_______</span>
+      input = '';
+    }
+    else {
+      alert("Fatal Error!"+substr(input,0,20));
+      input = '';
+    }
+  }
+  return out;
+}
+</pre>
+	<br>
+	<input type="Button" value="Completar" onClick="stuff()" class="myButton"><label for="name">
+	<input type="Button" value="Limpiar" onClick="erase()" class="myButton"><label for="name"><br><br>
+</div>
+
+
+
+
+	</section>
+	
+	<footer>
+		<div id="vacio_arriba"></div>
+		<div id="final_arriba">
+			<a href="http://mdbgalvan.github.io/">Volver a la Página Principal</a>
+		</div>
+		<div id="final_abajo">
+			Realizado por: Itahisa M. Díaz Díaz y María D. Batista Galván
+		</div>
+		<div id="vacio_abajo"></div>	
+	</footer>
+	
+</body>
+</html>
