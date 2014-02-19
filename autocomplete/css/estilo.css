@@ -23,6 +23,19 @@ td.coord {
 	font-size: 14px;
 }
 
+/*Para que el código quede más similar a las letras de código
+pre {
+	font-family: 'Monaco', 'Lucida Console', monospace;
+	padding: 10px 70px 10px 0;
+	margin-left: -10px;
+	margin-bottom: -10px;
+	line-height: 20px;
+}
+*/
+
+:focus { /*Quitar el recuadro cuando tiene el focus*/
+	outline:0px;
+}
 
 	/*http://www.bestcssbuttongenerator.com/*/
     
