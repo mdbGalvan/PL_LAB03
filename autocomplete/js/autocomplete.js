@@ -2,12 +2,12 @@ window.onload = function() {
 	erase_js();
 	erase_css();
 	erase_html();
+	enumerate();
 };
 
-
 function stuff_js () {
-	$("span.gap_js").css("background-color","white");
-	$("span.gap_js").css("color","blue");
+	$("span.gap_js").css("background-color","#9A2EFE");
+	$("span.gap_js").css("color","white");
 	
 	$('#sol0').text("strict");
 	$('#sol1').text("ready");
@@ -38,44 +38,44 @@ function stuff_js () {
 }
 
 function stuff_html() {
-	$("span.gap_html").css("background-color","white");
-	$("span.gap_html").css("color","blue");
+	$("span.gap_html").css("background-color","#9A2EFE");
+	$("span.gap_html").css("color","white");
 	$('#html1').text("fileinput");
 	$('#html2').text("initialinput");
 	$('#html3').text("finaloutput");
 }
 
 function stuff_css() {
-	$("span.gap_css").css("background-color","white");
-	$("span.gap_css").css("color","blue");
-	$('#css1').text("___");
-	$('#css2').text("___");
-	$('#css3').text("___");
+	$("span.gap_css").css("background-color","#9A2EFE");
+	$("span.gap_css").css("color","white");
+	$('#css1').text("none");
+	$('#css2').text("block");
+	$('#css3').text("background-color");
 	$('#css4').text("___");
-	$('#css5').text("___");
+	$('#css5').text("background-color");
 	$('#css6').text("___");
-	$('#css7').text("___");
+	$('#css7').text("background-color");
 	$('#css8').text("___");
-	$('#css9').text("___");
+	$('#css9').text("background-color");
 	$('#css10').text("___");
-	$('#css11').text("___");
+	$('#css11').text("background-color");
 	$('#css12').text("___");
 }
 
 function erase_js () {
 	$("span.gap_js").css("color","black");
-	$("span.gap_js").css("background-color","yellow");
+	$("span.gap_js").css("background-color","#D6B64C");
 	$("span.gap_js").text('_______');
 }
 
 function erase_css () {
 	$("span.gap_css").css("color","black");
-	$("span.gap_css").css("background-color","yellow");
+	$("span.gap_css").css("background-color","#D6B64C");
 	$("span.gap_css").text('_______');
 }
 
 function erase_html () {
 	$("span.gap_html").css("color","black");
-	$("span.gap_html").css("background-color","yellow");
+	$("span.gap_html").css("background-color","#D6B64C");
 	$("span.gap_html").text('_______');
 }
