@@ -8,7 +8,7 @@ Descripción:
 
 Enlaces
 ------------
-- [Analizador CSV](http://mdbgalvan.github.io/PL_LAB03/): publicado en la github page del proyecto.
+- [Ficheros INI](http://mdbgalvan.github.io/PL_LAB03/): publicado en la github page del proyecto.
 - [Pruebas Unitarias](http://mdbgalvan.github.io/PL_LAB03/tests): accesible también a través de la github page del proyecto.
 
 **por**: 
