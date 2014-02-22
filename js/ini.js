@@ -1,11 +1,7 @@
 "use strict"; // Use ECMAScript 5 strict mode in browsers that support it
 
 $(document).ready(function() {
-<<<<<<< HEAD
 	$("#fileinput").change(calculate);
-=======
-   $("#fileinput").change(calculate);
->>>>>>> origin/master
 });
 
 function calculate(evt) {
@@ -29,7 +25,6 @@ function calculate(evt) {
   }
 }
 
-<<<<<<< HEAD
 function tokensToString(tokens) {
 	var r = '';
 	// Underscore
@@ -43,19 +38,6 @@ function tokensToString(tokens) {
 	}
 	
 	return '<ol>\n'+r+'</ol>';
-=======
-var temp = '<li> <span class = "<%= token.type %>"> <%= match %> </span>\n';
-
-function tokensToString(tokens) {
-   var r = '';
-   for(var i=0; i < tokens.length; i++) {
-     var t = tokens[i]
-     var s = JSON.stringify(t, undefined, 2);
-     s = _.template(temp, {token: t, match: s});
-     r += s;
-   }
-   return '<ol>\n'+r+'</ol>';
->>>>>>> origin/master
 }
 
 function lexer(input) {
@@ -97,3 +79,4 @@ function lexer(input) {
   }
   return out;
 }
+
