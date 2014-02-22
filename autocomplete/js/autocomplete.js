@@ -64,18 +64,18 @@ function stuff_css() {
 
 function erase_js () {
 	$("span.gap_js").css("color","black");
-	$("span.gap_js").css("background-color","#D6B64C");
+	$("span.gap_js").css("background-color","#BFAA84");
 	$("span.gap_js").text('_______');
 }
 
 function erase_css () {
 	$("span.gap_css").css("color","black");
-	$("span.gap_css").css("background-color","#D6B64C");
+	$("span.gap_css").css("background-color","#BFAA84");
 	$("span.gap_css").text('_______');
 }
 
 function erase_html () {
 	$("span.gap_html").css("color","black");
-	$("span.gap_html").css("background-color","#D6B64C");
+	$("span.gap_html").css("background-color","#BFAA84");
 	$("span.gap_html").text('_______');
 }
