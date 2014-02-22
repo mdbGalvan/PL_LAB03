@@ -85,7 +85,7 @@
 		fichero original; y en la derecha el árbol sintáctico. </p>
 		
 		<p>Además, puedes descárgarte los siguientes ficheros INI de ejemplo:</p>
-		<ul style="list-style:none;list-style-image:url('images/flecha.gif')">
+		<ul class="arrow">
 			<li><a href="input files/input.ini" target="_blank">input.ini</a></li>
 			<li><a href="input files/input2.ini" target="_blank">input2.ini</a></li>
 		</ul>
@@ -114,17 +114,24 @@
 		
 		<br><br>
 		
-		<div id="out" class="hidden">
+		<div id="out" class="hidden" style="height: 400px; overflow: auto;">
 			<table class="ini">
-				<tr><th>Original</th><th>Tokens</th></tr>
-				<tr>
-					<td>
-					  <pre class="input" id="initialinput"></pre>
-					</td>
-					<td>
-					  <pre class="output" id="finaloutput"></pre>
-					</td>
-				</tr>
+				<thead>
+					<tr>
+						<th>Original</th>
+						<th>Tokens</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+						  <pre class="input" id="initialinput"></pre>
+						</td>
+						<td>
+						  <pre class="output" id="finaloutput"></pre>
+						</td>
+					</tr>
+				</tbody>
 			</table>
 		</div>
 		
