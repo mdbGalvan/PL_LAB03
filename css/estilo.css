@@ -4,6 +4,9 @@ p.italic {font-style:italic;}
 p.oblique {font-style:oblique;}
 p#note{font-size: 12px;font-style:italic;}
 
+.hidden      { display: none; }
+.unhidden    { display: block; }
+
 ul {	margin-bottom: 40px;}
 
 li {	margin-bottom: 10px;}
@@ -23,19 +26,6 @@ td.coord {
 	font-size: 14px;
 }
 
-/*Para que el código quede más similar a las letras de código
-pre {
-	font-family: 'Monaco', 'Lucida Console', monospace;
-	padding: 10px 70px 10px 0;
-	margin-left: -10px;
-	margin-bottom: -10px;
-	line-height: 20px;
-}
-*/
-
-:focus { /*Quitar el recuadro cuando tiene el focus*/
-	outline:0px;
-}
 
 	/*http://www.bestcssbuttongenerator.com/*/
     
