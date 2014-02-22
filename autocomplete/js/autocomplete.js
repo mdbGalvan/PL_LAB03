@@ -8,7 +8,7 @@ window.onload = function() {
 function stuff_js () {
 	$("span.gap_js").css("background-color","#9A2EFE");
 	$("span.gap_js").css("color","white");
-	
+
 	$('#sol0').text("strict");
 	$('#sol1').text("ready");
 	$('#sol2').text("click");
@@ -64,30 +64,18 @@ function stuff_css() {
 
 function erase_js () {
 	$("span.gap_js").css("color","black");
-<<<<<<< HEAD
-	$("span.gap_js").css("background-color","#D6B64C");
-=======
 	$("span.gap_js").css("background-color","#BFAA84");
->>>>>>> origin/master
 	$("span.gap_js").text('_______');
 }
 
 function erase_css () {
 	$("span.gap_css").css("color","black");
-<<<<<<< HEAD
-	$("span.gap_css").css("background-color","#D6B64C");
-=======
 	$("span.gap_css").css("background-color","#BFAA84");
->>>>>>> origin/master
 	$("span.gap_css").text('_______');
 }
 
 function erase_html () {
 	$("span.gap_html").css("color","black");
-<<<<<<< HEAD
-	$("span.gap_html").css("background-color","#D6B64C");
-=======
 	$("span.gap_html").css("background-color","#BFAA84");
->>>>>>> origin/master
 	$("span.gap_html").text('_______');
 }
