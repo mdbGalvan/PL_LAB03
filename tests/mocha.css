@@ -282,11 +282,11 @@ body {
 
 #mocha code { font-family: Lucida Console; color: grey; }
 #mocha code .comment, code .init , code .string, code .keyword, code .number { font-weight: bold;}
-#mocha code .comment { color: #442BD4; }
-#mocha code .init { color: #FF5252; }
-#mocha code .string { color: #92F2FC; }
-#mocha code .keyword { color: #6D4F81; }
-#mocha code .number { color: #82C974; }
+#mocha code .comment { color: #298A08; } 	/*verde*/
+#mocha code .init { color: #0404B4; } 		/*azul oscuro*/
+#mocha code .string { color: #8000FF; } 		/*violeta*/
+#mocha code .keyword { color: #B4045F; } 	/*rosado*/
+#mocha code .number { color: #00BFFF; } 		/*azul claro*/
 
 @media screen and (max-device-width: 480px) {
   #mocha {
