@@ -46,30 +46,35 @@ suite('PRUEBAS PARA LA DETECCIÓN DE LOS TYPE', function() {
 	});
 });
 
-suite('PRUEBAS PARA LA DETECCIÓN DE LOS TYPE', function() {
+suite('PRUEBAS PARA LA DETECCIÓN DE LOS MATCH', function() {
 	setup(function(){
 		var tokens;
+		var pretty;
 	});
 
 	test('Detección: Blanks', function() {
 		tokens = lexer(" ");
-		assert.equal(tokens[0].type,'blanks');
+		pretty = tokensToString(tokens);
+		assert.equal(pretty, '<ol>\n\n\t\t\t<li class = "blanks"> <span > {\n  "type": "blanks",\n  "match": [\n    " "\n  ]\n} </span>\n\t\t</ol>');
 	});
 	test('Detección: Header', function() {
 		tokens = lexer("[header]");
-		assert.equal(tokens[0].type,'header');
+		pretty = tokensToString(tokens);
+		assert.equal(pretty, '<ol>\n\n\t\t\t<li class = "header"> <span > {\n  "type": "header",\n  "match": [\n    "[header]",\n    "header"\n  ]\n} </span>\n\t\t</ol>');
 	});
 	test('Detección: Comments', function() {
 		tokens = lexer(";comments");
-		assert.equal(tokens[0].type,'comments');
+		pretty = tokensToString(tokens);
+		assert.equal(pretty, '<ol>\n\n\t\t\t<li class = "comments"> <span > {\n  "type": "comments",\n  "match": [\n    ";comments",\n    "comments"\n  ]\n} </span>\n\t\t</ol>');
 	});
 	test('Detección: NameEqualValue', function() {
-		var tokens = lexer("pretty = string");
-		var pretty = tokensToString(tokens);
+		tokens = lexer("pretty = string");
+		pretty = tokensToString(tokens);
 		assert.equal(pretty, '<ol>\n\n\t\t\t<li class = "nameEqualValue"> <span > {\n  "type": "nameEqualValue",\n  "match": [\n    "pretty = string",\n    "pretty ",\n    " string"\n  ]\n} </span>\n\t\t</ol>');
     });	
 	test('Detección: Error', function() {
 		tokens = lexer("!!");
-		assert.equal(tokens[0].type,'error');
+		pretty = tokensToString(tokens);
+		assert.equal(pretty, '<ol>\n\n\t\t\t<li class = "error"> <span > {\n  "type": "error",\n  "match": [\n    "!!",\n    "!"\n  ]\n} </span>\n\t\t</ol>');
 	});
 });
