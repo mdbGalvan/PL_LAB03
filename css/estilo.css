@@ -4,9 +4,6 @@ p.italic {font-style:italic;}
 p.oblique {font-style:oblique;}
 p#note{font-size: 12px;font-style:italic;}
 
-.hidden      { display: none; }
-.unhidden    { display: block; }
-
 ul {	margin-bottom: 40px;}
 
 li {	margin-bottom: 10px;}
@@ -18,17 +15,62 @@ a:link {
 a:visited {
     color: #7C6A64;
 }
-	
-table {width:100%;}
-
-td.coord {
-	text-align:left;
-	font-size: 14px;
-}
 
 :focus { /*Quitar el recuadro cuando tiene el focus*/
 	outline: 0px;
 }
+	
+	/* Estilo para el botón de cargar fichero */
+	
+div.upload {
+    width: 157px;
+    height: 57px;
+    background: url(../images/greybutton.png);
+    overflow: hidden;
+	margin:0 auto 0 auto;
+}
+
+div.upload input {
+    display: block !important;
+    width: 157px !important;
+    height: 57px !important;
+    opacity: 0 !important;
+    overflow: hidden !important;
+}	
+	
+	/* Estilo para el Drag & Drop */
+	
+#dragDrop {
+	border: 3px dashed grey;
+	border-radius:22px;
+	width:700px;
+	height:200px;
+	padding: 5px;
+	text-align: center;
+	margin:0 auto 0 auto;
+	background-color: #FFFFFF;
+}
+
+img {
+	display:block;
+	margin:15px;
+	margin:0 auto 0 auto;
+}
+
+	/* Estilo de la tabla de la lectura de los ficheros INI */
+
+table.uploadFile {	
+	width: 80%;
+	margin:0 auto 0 auto;
+}
+	
+td.ini {
+	vertical-align: top;
+}
+
+.hidden      { display: none; }
+.unhidden    { display: block; }
+
 	
 	/*http://www.bestcssbuttongenerator.com/*/
     
