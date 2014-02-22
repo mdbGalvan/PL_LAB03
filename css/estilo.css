@@ -64,11 +64,11 @@ ul.arrow  {
 table {
 	border-collapse: separate;
 	border-spacing: 5px;
+	margin:0 auto 0 auto;
 }
 
 table.uploadFile {	
 	width: 80%;
-	margin:0 auto 0 auto;
 }
 	
 td.uploadFile {
@@ -162,11 +162,11 @@ li.header {
 	background-color:#E7FC92;
 }
 
-li.comments {
+li.nameEqualValue {
 	background-color:#92F2FC;
 }
 
-li.nameEqualValue {
+li.comments {
 	background-color:#6D4F81;
 }
 

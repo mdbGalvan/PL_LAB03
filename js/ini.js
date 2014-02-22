@@ -124,5 +124,10 @@ window.onload = function() {		// Cuando se cargue la página se ejecuta lo que e
         initialinput.innerHTML = localStorage.initialinput;		// Cargamos los datos del fichero original
         finaloutput.innerHTML = localStorage.finaloutput;		// Cargamos el árbol sintáctico
 		file.innerHTML = localStorage.fileinput;				// Cargamos el nombre del fichero
-    }	
+    } else {
+		out.className = "unhidden";
+		finaloutput.innerHTML = '<ol>\n\n\n<li class="comments"><span> { "type": "comments",\n "match": [\n "; last modified 1 April 2001 by John Doe", \n " last modified 1 April 2001 by John Doe" \n ] \n } </span> </li> </ol>';
+		initialinput.innerHTML = '; last modified 1 April 2001 by John Doe \n [owner] \n name=John Doe \n organization=Acme Widgets Inc.';
+		file.innerHTML = 'input.ini () -231bytes, last modified: 21/2/2014';
+	}
 };
