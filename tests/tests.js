@@ -4,7 +4,7 @@ suite('PRUEBAS PARA EL LOCALSTORAGE', function() {
 	test('Soporta localStorage', function() {
 		if (window.localStorage) {
 			localStorage.finaloutput = '<ol>\n\n\n<li class="comments"><span> { "type": "comments",\n "match": [\n "; last modified 1 April 2001 by John Doe", \n " last modified 1 April 2001 by John Doe" \n ] \n } </span> </li> </ol>';
-			assert.equal(localStorage.finaloutput, '<ol>\n\n\n<li class="comments"><span> { "type": "comments",\n "match": [\n "; last modified 1 April 2001 by John Doe", \n " last modified 1 April 2001 by John Doe" \n ] \n } </span> </li> </ol>');
+			assert.deepEqual(localStorage.finaloutput, '<ol>\n\n\n<li class="comments"><span> { "type": "comments",\n "match": [\n "; last modified 1 April 2001 by John Doe", \n " last modified 1 April 2001 by John Doe" \n ] \n } </span> </li> </ol>');
 			localStorage.removeItem("test");
 		}
 	});
