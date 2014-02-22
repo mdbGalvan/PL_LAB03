@@ -5,24 +5,36 @@ $(document).ready(function() {
 });
 
 function calculate(evt) {
-  var f = evt.target.files[0]; 
+	var f = evt.target.files[0]; 
 
-  if (f) {
-    var r = new FileReader();
-    r.onload = function(e) { 
-      var contents = e.target.result;
-      
-      var tokens = lexer(contents);
-      var pretty = tokensToString(tokens);
-      
-      out.className = 'unhidden';
-      initialinput.innerHTML = contents;
-      finaloutput.innerHTML = pretty;
-    }
-    r.readAsText(f);
-  } else { 
-    alert("Failed to load file");
-  }
+	if (f) {
+		var r = new FileReader();
+		r.onload = function(e) { 
+			var contents = e.target.result;
+		  
+			var tokens = lexer(contents);
+			var pretty = tokensToString(tokens);
+		  
+			out.className = 'unhidden';
+			
+			// Si el navegador soporta localStore almacenamos en el localStorage los datos introducidos
+			if (window.localStorage) {
+				localStorage.initialinput = contents;
+				localStorage.finaloutput = pretty;
+			}
+			
+			initialinput.innerHTML = contents;
+			finaloutput.innerHTML = pretty;
+		}
+		r.readAsText(f);
+		// http://jsfiddle.net/moscartong/uunAY/1/embedded/
+		file.innerHTML = '<strong>' + f.name + '</strong>' + ' (' + f.type + ')' + ' -' + f.size + 'bytes' + ', last modified: ' + f.lastModifiedDate.toLocaleDateString();
+		if (window.localStorage){
+			localStorage.fileinput = file.innerHTML ;	
+		} 
+	} else { 
+		alert("Failed to load file");
+	}
 }
 
 function tokensToString(tokens) {
@@ -80,3 +92,12 @@ function lexer(input) {
   return out;
 }
 
+window.onload = function() {		// Cuando se cargue la página se ejecuta lo que está aquí dentro
+	// Si el navegador soporta localStorage y tenemos algo almacenado, pues lo cargamos en el textarea
+    if (window.localStorage && localStorage.initialinput && localStorage.finaloutput) {	
+		out.className = "unhidden";								// Cambiamos a la clase que muestra la tabla
+        initialinput.innerHTML = localStorage.initialinput;		// Cargamos los datos del fichero original
+        finaloutput.innerHTML = localStorage.finaloutput;		// Cargamos el árbol sintáctico
+		file.innerHTML = localStorage.fileinput;			// Cargamos el nombre del fichero
+    }	
+};
