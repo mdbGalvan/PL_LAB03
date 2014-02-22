@@ -1,34 +1,151 @@
-
+<!DOCTYPE html>
 <html>
-  <head>
-     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-     <title>INI files</title>
-     <link href="css/style.css" rel="stylesheet" type="text/css">
-<!--
-     <link rel="shortcut icon" href="logo.png" />
--->
-     <!-- <link rel="shortcut icon" href="etsiiull.png" type="image/x-icon"> -->
+<head>
 
-     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <title>Práctica 3: INI File Parser</title>
 
-     <script type="text/javascript" src="js/ini.js"></script>
-  </head>
-  <body>
-    <h1>INI files</h1>
-    <input type="file" id="fileinput" />
-    <div id="out" class="hidden">
-    <table>
-      <tr><th>Original</th><th>Tokens</th></tr>
-      <tr>
-        <td>
-          <pre class="input" id="initialinput"></pre>
-        </td>
-        <td>
-          <pre class="output" id="finaloutput"></pre>
-        </td>
-      </tr>
-    </table>
-    </div>
-  </body>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="shortcut icon" href="images/logo.png">
+	<!-- CSS -->
+	<link href="css/nuevo.css" rel="stylesheet" type="text/css" />
+	<link href="css/estilo.css" rel="stylesheet" type="text/css" />
+	<!-- JAVASCRIPT -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.5.2/underscore-min.js"></script>
+	<script type="text/javascript" src="js/ini.js"></script>
+	<script type="text/html" id='lista'>
+		<li class = "<%= token.type %>"> <span > <%= match %> </span>
+    </script>
+</head>
+<body> 
+
+	<header>
+		<div id="cabecera">
+			Práctica 3: Ficheros INI <span style="font-size:19px;color:gray"> Asignatura:</span> Procesadores de Lenguajes<br>
+			<span style="font-size:22px; color:#553529">Profesor: Casiano Rodríguez León</span>
+		</div>
+		<div id="negro">
+			<div id="volver">
+				<a href="http://mdbgalvan.github.io/" target="_blank">alu3299</a> /
+				<a href="http://itahisadzx2.github.io/" target="_blank">alu4061</a>
+			</div>	
+		</div>
+	</header>
+	
+	<div id="indice">
+		<div id="titulo_indice"><img src="images/indice_cortado.png"></div>
+		<dd>
+				<li><a href="#punto1">Explicación</a></li>
+				<li><a href="#punto2">Práctica 3 : INI File Parser</a></li>
+				<li><a href="#punto3">Tests</a></li>
+		</dd>
+	</div>
+
+	<hr>
+	
+	<section>
+
+		<!-- EXPLICACIÓN -->
+		<p id="punto1"></p>
+		
+		<div id="titulillo">
+		Explicación
+		</div>
+		
+		<p>
+		La presente práctica consistió en realizar una aplicación web para leer y procesar <a href= "http://en.wikipedia.org/wiki/INI_file" target="blank"> ficheros ini </a>. Para su ejecución, se hizo uso de los conocimientos adquiridos en <b><a href="http://mdbgalvan.github.io/#punto2" target="_blank">
+		prácticas anteriores</a></b>:
+		
+		<ul>
+			<li type="square"> Desarrollo de la app con los lenguajes <b>HTML</b>, <b>CSS</b> y <b>Javascript</b>. </li>
+			<li type="square"> Uso de las librerías <b>JQuery</b> (para el manejor de eventos) y <b>Underscore.js</b> (para estructurar la salida). </li>
+			<li type="square"> Uso de <b> LocalStorage </b> y <b>SessionStorage</b> y la API de <b>HTML5</b> en <b>JavaScript</b> que lo maneja. </li>
+			<li type="square"> Entorno de pruebas basado en <b>Mocha</b> y <b>Chai</b>. </li>
+			<li type="square"> <b>JSON</b> (JavaScript Object Notation), concretamente el método <b>stringify()</b> para añadir soporte de multilíneas en las asignaciones.</li>
+		</ul>
+		
+		Adicionalmente, para esta práctica es necesario el uso de:
+		
+		<ul>
+			<li type="square"> La API de <b>HTML5</b>, <b>File API</b>, para el manejo de ficheros locales.</li>
+		</ul>
+
+	
+		<!-- PRÁCTICA 3-->
+		<p id="punto2"></p>
+		
+		<div id="titulillo">
+			Práctica 3 : INI File Parser
+		</div>
+		
+		<p><b> INSTRUCCIONES DE USO </b></p>
+		<p> Los ficheros ini a procesar pueden arrastrarse al área señalada o subir un fichero buscando con 
+		el explorador de archivos en su ordenador. Una vez, subido o arrastrado, se procesa el fichero y 
+		aparecerá parseado en el parte inferior, el cual se divide en dos columnas: en la izquierda verá el 
+		fichero original; y en la derecha el árbol sintáctico. </p>
+
+		<table class="uploadFile">
+			<tr>
+				<td>
+					<figure id="dragDrop">
+						<img src="images/dd.png" width="95%" alt="Drag & Drop">
+					</figure>
+				</td>
+				<td>
+					<div class="upload">
+						<input type="file" id="fileinput" name="upload" />
+					</div>
+				</td>
+			</tr>
+		</table>	
+		
+		<p>Puedes descárgarte los siguientes ficheros INI de ejemplo:</p>
+		<ul style="list-style:none;list-style-image:url('images/flecha.gif')">
+			<li><a href="input files/input.ini" target="_blank">input.ini</a></li>
+			<li><a href="input files/input2.ini" target="_blank">input2.ini</a></li>
+		</ul>
+			
+			<div id="out" class="hidden">
+				<table class="ini">
+				  <tr><th>Original</th><th>Tokens</th></tr>
+				  <tr>
+					<td>
+					  <pre class="input" id="initialinput"></pre>
+					</td>
+					<td>
+					  <pre class="output" id="finaloutput"></pre>
+					</td>
+				  </tr>
+				</table>
+			</div>
+		
+
+		
+		<!-- TESTS -->
+		<p id="punto3"></p>
+		
+		<div id="titulillo">
+			Tests 
+		</div>
+		
+		<p>Una vez realizado toda la práctica, se creó unas pruebas para verificar el correcto cumplimiento de nuestro código en 
+		<b>javaScript</b>. Para ello, se siguieron los mismos pasos que en prácticas anteriores.
+
+		<p>El enlace donde se puede observar los tests son: <b><a href="http://mdbgalvan.github.io/PL_LAB02/tests/" target="_blank">aquí</a></b>.</p>
+		
+	</section>
+	
+	<footer>
+		<div id="vacio_arriba"></div>
+		<div id="final_arriba">
+			Volver a la Página Principal de <a href="http://mdbgalvan.github.io/" target="_blank">María</a>
+			o de <a href="http://itahisadzx2.github.io/" target="_blank">Itahisa</a>
+		</div>
+		<div id="final_abajo">
+			Realizado por: Itahisa M. Díaz Díaz y María D. Batista Galván
+		</div>
+		<div id="vacio_abajo"></div>	
+	</footer>
+	
+</body>
 </html>
