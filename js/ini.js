@@ -48,8 +48,8 @@ function calculate(evt) {
 				localStorage.finaloutput = pretty;
 			}
 			
-			initialinput.innerHTML = contents;
-			finaloutput.innerHTML = pretty;
+			initialinput.innerHTML = contents;		// El contenido original del fichero
+			finaloutput.innerHTML = pretty;			// El árbol sintáctico usando underscore
 		}
 		r.readAsText(f);
 		// http://jsfiddle.net/moscartong/uunAY/1/embedded/
@@ -123,6 +123,6 @@ window.onload = function() {		// Cuando se cargue la página se ejecuta lo que e
 		out.className = "unhidden";								// Cambiamos a la clase que muestra la tabla
         initialinput.innerHTML = localStorage.initialinput;		// Cargamos los datos del fichero original
         finaloutput.innerHTML = localStorage.finaloutput;		// Cargamos el árbol sintáctico
-		file.innerHTML = localStorage.fileinput;			// Cargamos el nombre del fichero
+		file.innerHTML = localStorage.fileinput;				// Cargamos el nombre del fichero
     }	
 };
