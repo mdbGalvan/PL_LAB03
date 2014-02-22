@@ -28,7 +28,7 @@
 	/*			GENERAL 		*/
 	/****************************/
 body {
-    background: #E5B44B;
+    background: #C9C9C9;/*#C29957;*/
     min-width: 450px;
     max-width: 1260px;
     margin: 0 auto;
@@ -59,7 +59,7 @@ header {
     background-repeat: no-repeat, no-repeat;
     background-position: 730px -49px, 0px 0px;
     background-size: 400px, 179px;
-    background-color: #DDCB91;
+    background-color: #FFFFFF/*#DDCB91*/;
     line-height: 20px;
 }
 #negro {
@@ -73,7 +73,7 @@ header {
     -moz-border-radius: 0px 0px 16px 16px;
     -webkit-border-radius: 0px 0px 16px 16px;
     -o-border-radius: 0px 0px 16px 16px;
-    background-color: #3e332f;
+    background-color: #363942/*#3e332f*/;
 }
 #negro a {
     /*font-family: font1_negrita;*/
@@ -82,7 +82,7 @@ header {
     font-size: 27px;
 }
 #negro a:hover {
-    color: #DDCB91;
+    color: #FFFFFF;
     text-decoration: none;
 }
 #volver {
@@ -93,7 +93,7 @@ header {
 	color: #FFFFFF;
 }
 #volver a {
-    /*color: #3e332f;*/
+    /*color: #363942;*/
     text-decoration: none;
 }
 #volver a:hover {
@@ -146,13 +146,13 @@ footer {
     -o-border-radius: 16px 16px 0px 0px;
     background: url('../images/medio_arriba.png');
     background-repeat: no-repeat;
-    background-color: #3E332F;
+    background-color: #363942;
 }
 #final_abajo {
     padding: 4px 0px 0px 188px;
     height: 32px;
     font-family: quattrocento;
-    color: #3E332F;
+    color: #363942;
     font-size: 14px;
     text-align: left;
     border: 0px;
@@ -162,7 +162,7 @@ footer {
     -o-border-radius: 0 0 16px 16px;
     background: url('../images/medio_abajo.png');
     background-repeat: no-repeat;
-    background-color: #DDCB91;
+    background-color: #FFFFFF;
 }
 	/****************************/
 	/*			SECTION  		*/
@@ -191,7 +191,7 @@ section a:hover {
     width: 500px;
     border: 0px;
     border-radius: 8px 8px 8px 8px;
-    background-color: #3e332f;
+    background-color: #363942;
     color: white;
     padding: 2px 0px 6px 15px;
     margin-top: 40px;
@@ -200,7 +200,7 @@ section a:hover {
 #codigo {
     width: 800px;
     font-size: 15px;
-    color: #3e332f;
+    color: #363942;
     padding: 1px 0px 1px 35px;
     border-radius: 13px;
     background-color: rgba(255,255,255,0.7);
@@ -228,7 +228,7 @@ section a:hover {
     background-repeat: no-repeat;
     background-size: 500px;
     background-position: 550px -400px;
-    background-color: #DDCB91;
+    background-color: #FFFFFF;
     border-radius: 13px;
     padding: 12px 0 19px 0;
     margin-left: 25px;

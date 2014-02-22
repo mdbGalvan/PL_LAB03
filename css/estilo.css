@@ -26,7 +26,10 @@ td.coord {
 	font-size: 14px;
 }
 
-
+:focus { /*Quitar el recuadro cuando tiene el focus*/
+	outline: 0px;
+}
+	
 	/*http://www.bestcssbuttongenerator.com/*/
     
     
