@@ -2,10 +2,35 @@
 
 $(document).ready(function() {
 	$("#fileinput").change(calculate);
+	// http://www.html5rocks.com/es/tutorials/file/dndfiles/
+	// Setup the dnd listeners.
+	var dropZone = document.getElementById('drop_zone');
+	dropZone.addEventListener('dragover', handleDragOver, false);
+	dropZone.addEventListener('drop', handleFileSelect, false);
 });
 
+function handleFileSelect(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+
+    var files = evt.dataTransfer.files; // FileList object.
+
+    // files is a FileList of File objects. List some properties.
+    calculate(evt);
+}
+
+function handleDragOver(evt) {
+    evt.stopPropagation();
+    evt.preventDefault();
+    evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
+}
+
 function calculate(evt) {
-	var f = evt.target.files[0]; 
+	
+	if (evt.type == "drop") 	// Si entra como drop
+		var f = evt.dataTransfer.files[0];	// FileList object.
+	else
+		var f = evt.target.files[0]; 
 
 	if (f) {
 		var r = new FileReader();
