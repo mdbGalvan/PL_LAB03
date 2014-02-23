@@ -82,15 +82,8 @@
 		<p> Los ficheros ini a procesar pueden arrastrarse al área señalada o subir un fichero buscando con 
 		el explorador de archivos en su ordenador. Una vez, subido o arrastrado, se procesa el fichero y 
 		aparecerá parseado en el parte inferior, el cual se divide en dos columnas: en la izquierda se verá el 
-		fichero original; y en la derecha el árbol sintáctico. </p>
-		
-		<!--<p>Además, puedes descárgarte los siguientes ficheros INI de ejemplo:</p>
-		<ul class="arrow">
-			<li><a href="input files/input.ini" target="_blank">input.ini</a></li>
-			<li><a href="input files/input2.ini" target="_blank">input2.ini</a></li>
-		</ul>-->
+		fichero original; y en la derecha el árbol sintáctico. </p><br>
 
-		
 		<table class="uploadFile">
 			<tr>
 				<td>
@@ -119,10 +112,11 @@
 		<br>
 			
 		<div style="text-align: center;"><span id="fileINI">Fichero INI:</span> <span id="file"></span></div>
+		<!--<input type="button" id="seleccion" onclick='$("li.blanks").eq(0).css("background-color", "red");'/>-->
 		
 		<br><br>
 		
-		<div id="out" class="hidden" style="height: 600px; overflow: auto;">
+		<div id="out" class="hidden">
 			<table class="ini">
 				<thead>
 					<tr>
@@ -142,7 +136,11 @@
 				</tbody>
 			</table>
 		</div>
-		
+		<script src="js/jquery.stickytableheaders.js"></script>
+		<script>
+			$("table.ini").stickyTableHeaders();
+		</script>
+	
 		<!-- TESTS -->
 		<p id="punto3"></p>
 		

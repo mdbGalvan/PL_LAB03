@@ -5,10 +5,8 @@ p#note{font-size: 12px;font-style:italic;}
 
 a:link { color: #FFFFFF;}
 a:visited { color: #7C6A64;}
-
-:focus { /*Quitar el recuadro cuando tiene el focus*/
-	outline: 0px;
-}
+/*Quitar el recuadro cuando tiene el focus*/
+:focus { outline: 0px;}
 
 	/* Estilo del nombre del fichero */
 #fileINI {
@@ -52,40 +50,33 @@ img {
 	margin:0 auto 0 auto;
 }
 
-ul.arrow  {
-	list-style-image: url('../images/arrow.gif');
-}
+ul.arrow  {list-style-image: url('../images/arrow.gif');}
 
 	/* Estilo de las tablas */
 
 .hidden      { display: none; }
 .unhidden    { display: block; }
 
+
 div.unhidden {
-	height: 400px;
-	overflow-y: auto;
+	overflow: auto;
 	width: 95%;
 }
 
+/*
 tbody.scrollContent {
 	overflow-x: hidden;
 	overflow-y: auto;
 	height: 370px;
-}
+}*/
 
 table {
 	border-collapse: separate;
-	border-spacing: 10px;
 	margin:0 auto 0 auto;
 }
 
-table.uploadFile {	
-	width: 95%;
-}
-	
-td.uploadFile {
-	vertical-align: middle;
-}
+table.uploadFile {width: 95%;}
+td.uploadFile {vertical-align: middle;}
 
 table.ini th {
 	-moz-box-shadow: 0px 1px 0px 0px #1c1b18;
@@ -138,9 +129,7 @@ table.ini td{
 
 	/* Estilo de las listas que contiene el árbol sintáctico*/
 
-ol {
-	margin-top: -65px;
-}	
+ol {margin-top: -65px;}	
 	
 ol li {
 	vertical-align: middle;
@@ -166,78 +155,11 @@ ol li:hover {
 	-webkit-transition: ease-in all 300ms;
 }
 
-li.blanks {
-	background-color:#FF5252;
-}
-
-li.header {
-	background-color:#E7FC92;
-}
-
-li.nameEqualValue {
-	background-color:#92F2FC;
-}
-
-li.comments {
-	background-color:#6D4F81;
-}
-
-li.error {
-	background-color:#82C974;
-}
-
-
-
-	
-	/*http://www.bestcssbuttongenerator.com/*/
-    
-    
-    .myButton {
-	
-		-moz-box-shadow: 0px 1px 0px 0px #1c1b18;
-		-webkit-box-shadow: 0px 1px 0px 0px #1c1b18;
-		box-shadow: 0px 1px 0px 0px #1c1b18;
-		
-		background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #eae0c2), color-stop(1, #ccc2a6));
-		background:-moz-linear-gradient(top, #eae0c2 5%, #ccc2a6 100%);
-		background:-webkit-linear-gradient(top, #eae0c2 5%, #ccc2a6 100%);
-		background:-o-linear-gradient(top, #eae0c2 5%, #ccc2a6 100%);
-		background:-ms-linear-gradient(top, #eae0c2 5%, #ccc2a6 100%);
-		background:linear-gradient(to bottom, #eae0c2 5%, #ccc2a6 100%);
-		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#eae0c2', endColorstr='#ccc2a6',GradientType=0);
-		
-		background-color:#eae0c2;
-		
-		-moz-border-radius:15px;
-		-webkit-border-radius:15px;
-		border-radius:15px;
-		
-		border:3px solid #333029;
-		
-		display:inline-block;
-		cursor:pointer;
-		color:#505739;
-		font-family:arial;
-		font-size:14px;
-		font-weight:bold;
-		padding:7px 86px;
-		text-decoration:none;
-		text-shadow:0px 1px 0px #ffffff;
-	}
-	.myButton:hover {
-		background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ccc2a6), color-stop(1, #eae0c2));
-		background:-moz-linear-gradient(top, #ccc2a6 5%, #eae0c2 100%);
-		background:-webkit-linear-gradient(top, #ccc2a6 5%, #eae0c2 100%);
-		background:-o-linear-gradient(top, #ccc2a6 5%, #eae0c2 100%);
-		background:-ms-linear-gradient(top, #ccc2a6 5%, #eae0c2 100%);
-		background:linear-gradient(to bottom, #ccc2a6 5%, #eae0c2 100%);
-		filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ccc2a6', endColorstr='#eae0c2',GradientType=0);
-		background-color:#ccc2a6;
-	}
-	.myButton:active {
-		position:relative;
-		top:1px;
-	}
+li.blanks {background-color:#FF5252;}
+li.header {background-color:#E7FC92;}
+li.nameEqualValue {background-color:#92F2FC;}
+li.comments {	background-color:#6D4F81;}
+li.error {background-color:#82C974;}
 
 
 

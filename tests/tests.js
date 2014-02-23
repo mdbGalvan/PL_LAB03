@@ -3,8 +3,8 @@ var assert = chai.assert;
 suite('PRUEBAS PARA EL LOCALSTORAGE', function() {
 	test('Soporta localStorage', function() {
 		if (window.localStorage) {
-			localStorage.finaloutput = '<ol>\n\n\n<li class="comments"><span> { "type": "comments",\n "match": [\n "; last modified 1 April 2001 by John Doe", \n " last modified 1 April 2001 by John Doe" \n ] \n } </span> </li> </ol>';
-			assert.deepEqual(localStorage.finaloutput, '<ol>\n\n\n<li class="comments"><span> { "type": "comments",\n "match": [\n "; last modified 1 April 2001 by John Doe", \n " last modified 1 April 2001 by John Doe" \n ] \n } </span> </li> </ol>');
+			localStorage.finaloutput = '\n\n<ol> <li class = "header"> <span > { \n"type": "header", \n"match": [ \n "[special_fields]", \n "special_fields" \n] \n} </span> <li class = "blanks"> <span > { \n"type": \n"blanks", \n"match": [ \n " \r\n" \n] \n} </span> <li class = "nameEqualValue"> <span > \n{ \n"type": "nameEqualValue", \n"match": [ \n "required = \"EmailAddr,FirstName, \\", \n "required ", \n " \"EmailAddr,FirstName, \\" \n] \n} </span> <li class = "blanks"> <span > \n{ \n"type": "blanks", \n"match": [ \n "\r\n" \n] \n} </span> <li class = "error"> <span > \n{ \n"type": "error", \n"match": [ \n "LastName, \\", \n "\\" \n] \n} </span> </ol>';
+			assert.deepEqual(localStorage.finaloutput, '\n\n<ol> <li class = "header"> <span > { \n"type": "header", \n"match": [ \n "[special_fields]", \n "special_fields" \n] \n} </span> <li class = "blanks"> <span > { \n"type": \n"blanks", \n"match": [ \n " \r\n" \n] \n} </span> <li class = "nameEqualValue"> <span > \n{ \n"type": "nameEqualValue", \n"match": [ \n "required = \"EmailAddr,FirstName, \\", \n "required ", \n " \"EmailAddr,FirstName, \\" \n] \n} </span> <li class = "blanks"> <span > \n{ \n"type": "blanks", \n"match": [ \n "\r\n" \n] \n} </span> <li class = "error"> <span > \n{ \n"type": "error", \n"match": [ \n "LastName, \\", \n "\\" \n] \n} </span> </ol>');
 			localStorage.removeItem("test");
 		}
 	});
