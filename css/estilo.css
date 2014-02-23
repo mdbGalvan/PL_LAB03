@@ -61,6 +61,18 @@ ul.arrow  {
 .hidden      { display: none; }
 .unhidden    { display: block; }
 
+div.unhidden {
+	height: 400px;
+	overflow-y: auto;
+	width: 95%;
+}
+
+tbody.scrollContent {
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 370px;
+}
+
 table {
 	border-collapse: separate;
 	border-spacing: 10px;
