@@ -27,22 +27,26 @@ suite('PRUEBAS PARA LA DETECCIÓN DE LOS TYPE', function() {
 	test('Detección: Blanks', function() {
 		tokens = lexer(" ");
 		assert.equal(tokens[0].type,'blanks');
+		assert.equal(tokens[0].match[0], ' ');
 	});
 	test('Detección: Header', function() {
 		tokens = lexer("[header]");
 		assert.equal(tokens[0].type,'header');
+		assert.equal(tokens[0].match[0], '[header]');
+		assert.equal(tokens[0].match[1], 'header');
 	});
 	test('Detección: Comments', function() {
 		tokens = lexer(";comments");
 		assert.equal(tokens[0].type,'comments');
+		assert.equal(tokens[0].match[0], ';comments');
+		assert.equal(tokens[0].match[1], 'comments');
 	});
 	test('Detección: NameEqualValue', function() {
-		tokens = lexer("nameEqualValue = nameEqualValue");
+		tokens = lexer("nameEqualValue=nameEqualValue");
 		assert.equal(tokens[0].type,'nameEqualValue');
-	});
-	test('Detección: Error', function() {
-		tokens = lexer("!!");
-		assert.equal(tokens[0].type,'error');
+		assert.equal(tokens[0].match[0], 'nameEqualValue=nameEqualValue');
+		assert.equal(tokens[0].match[1], 'nameEqualValue');
+		assert.equal(tokens[0].match[2], 'nameEqualValue');
 	});
 });
 
@@ -56,25 +60,42 @@ suite('PRUEBAS PARA LA DETECCIÓN DE LOS MATCH', function() {
 		tokens = lexer(" ");
 		pretty = tokensToString(tokens);
 		assert.equal(pretty, '<ol>\n\n\t\t\t<li class = "blanks"> <span > {\n  "type": "blanks",\n  "match": [\n    " "\n  ]\n} </span>\n\t\t</ol>');
+		assert.notEqual(pretty, '<ol></ol>');
 	});
 	test('Detección: Header', function() {
 		tokens = lexer("[header]");
 		pretty = tokensToString(tokens);
 		assert.equal(pretty, '<ol>\n\n\t\t\t<li class = "header"> <span > {\n  "type": "header",\n  "match": [\n    "[header]",\n    "header"\n  ]\n} </span>\n\t\t</ol>');
+		assert.notEqual(pretty, '<ol></ol>');
 	});
 	test('Detección: Comments', function() {
 		tokens = lexer(";comments");
 		pretty = tokensToString(tokens);
 		assert.equal(pretty, '<ol>\n\n\t\t\t<li class = "comments"> <span > {\n  "type": "comments",\n  "match": [\n    ";comments",\n    "comments"\n  ]\n} </span>\n\t\t</ol>');
+		assert.notEqual(pretty, '<ol>\n\n\t\t\t<li class = "header"> <span > {\n  "type": "header",\n  "match": [\n    "[header]",\n    "header"\n  ]\n} </span>\n\t\t</ol>');
 	});
 	test('Detección: NameEqualValue', function() {
 		tokens = lexer("pretty = string");
 		pretty = tokensToString(tokens);
 		assert.equal(pretty, '<ol>\n\n\t\t\t<li class = "nameEqualValue"> <span > {\n  "type": "nameEqualValue",\n  "match": [\n    "pretty = string",\n    "pretty ",\n    " string"\n  ]\n} </span>\n\t\t</ol>');
-    });	
-	test('Detección: Error', function() {
+		assert.notEqual(pretty, '<ol>\n\n\t\t\t<li class = "header"> <span > {\n  "type": "header",\n  "match": [\n    "[header]",\n    "header"\n  ]\n} </span>\n\t\t</ol>');
+   });	
+});
+
+suite('PRUEBAS PARA COMPROBAR ERRORES', function() {
+	setup(function(){
+		var tokens;
+		var pretty;
+	});
+	
+	test('Type', function() {
+		tokens = lexer("!!");
+		assert.match(tokens[0].type, /error/);
+	});
+	
+	test('Match', function() {
 		tokens = lexer("!!");
 		pretty = tokensToString(tokens);
-		assert.equal(pretty, '<ol>\n\n\t\t\t<li class = "error"> <span > {\n  "type": "error",\n  "match": [\n    "!!",\n    "!"\n  ]\n} </span>\n\t\t</ol>');
+		assert.match(pretty, /error/);
 	});
 });
